@@ -1,0 +1,438 @@
+/* =========================================
+   IMPORTACIÓN DE FUENTES
+========================================= */
+/* Importa la tipografía 'Outfit' desde Google Fonts para usarla en la web */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+/* =========================================
+   RESETEO BÁSICO (Reset CSS)
+========================================= */
+* {
+    margin: 0;
+    /* Elimina los márgenes que ponen los navegadores por defecto */
+    padding: 0;
+    /* Elimina los rellenos por defecto */
+    box-sizing: border-box;
+    /* Hace que los bordes y rellenos no aumenten el tamaño de las cajas */
+}
+
+/* =========================================
+   ESTILOS GENERALES DEL CUERPO (BODY)
+========================================= */
+body {
+    font-family: 'Outfit', sans-serif;
+    /* Aplica la fuente importada arriba */
+    line-height: 1.6;
+    /* Aumenta un poco el espacio entre líneas para mejor lectura */
+    display: flex;
+    /* Convierte el cuerpo en un contenedor flexible */
+    flex-direction: column;
+    /* Apila el contenido de arriba hacia abajo (header -> main -> footer) */
+    min-height: 100vh;
+    /* Asegura que la web ocupe al menos el 100% del alto de la pantalla */
+    background-color: #f1f5f9;
+    /* Color de fondo gris muy suave y elegante */
+    color: #334155;
+    /* Color del texto principal (gris oscuro) */
+}
+
+/* =========================================
+   CABECERA (HEADER) Y NAVEGACIÓN
+========================================= */
+header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    /* Fondo con degradado oscuro profesional */
+    color: #fff;
+    /* Texto en color blanco */
+    padding: 15px 30px;
+    /* Espaciado interior (arriba/abajo 15px, izquierda/derecha 30px) */
+    display: flex;
+    /* Activa flexbox para alinear elementos fácilmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    justify-content: space-between;
+    /* Separa el logo, el título y el menú a los extremos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Añade una sombra suave debajo de la cabecera */
+}
+    /* Estilos comunes para ambos botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efecto al pulsar cualquier botón */
+button:active {
+    transform: translateY(2px); /* Efecto de hundimiento */
+}
+
+/* Estilo específico para el botón de ENVIAR (submit) */
+button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    box-shadow: 0 4px 0 #1d4ed8; /* Sombra sólida para darle relieve */
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 2px 0 #1e3a8a;
+}
+
+/* Estilo específico para el botón de RESTABLECER (reset) */
+button[type="reset"] {
+    background-color: #e5e7eb;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+button[type="reset"]:hover {
+    background-color: #d1d5db;
+    color: #111827;
+}
+
+
+/* Estilos para la imagen del logo */
+.logo img {
+    border-radius: 8px;
+    /* Redondea las esquinas del logo */
+    transition: transform 0.3s ease;
+    /* Hace que cualquier cambio de tamaño sea suave y dure 0.3 segundos */
+}
+
+/* Efecto al pasar el ratón por el logo */
+.logo img:hover {
+    transform: scale(1.05);
+    /* Aumenta el tamaño del logo un 5% */
+}
+
+/* Contenedor del título central */
+.header-titulo {
+    text-align: center;
+    /* Centra el texto */
+    flex: 2;
+    /* Le da más espacio flexible para que se quede en el medio */
+}
+
+/* Título principal H1 */
+.header-titulo h1 {
+    font-size: 2rem;
+    /* Tamaño de letra grande */
+    color: #38bdf8;
+    /* Azul vibrante */
+    text-transform: uppercase;
+    /* Convierte todo a MAYÚSCULAS */
+    letter-spacing: 1px;
+    /* Separa un poco las letras */
+}
+
+/* Subtítulo debajo del H1 */
+.header-titulo p {
+    font-size: 0.95rem;
+    /* Tamaño de letra algo más pequeño */
+    color: #94a3b8;
+    /* Gris azulado */
+    letter-spacing: 1.5px;
+    /* Más separación entre letras */
+}
+
+/* Menú desplegable de navegación en la cabecera */
+.header-menu select {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Efecto de fondo blanco semitransparente */
+    color: #fff;
+    /* Texto blanco */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Borde blanco semitransparente */
+    padding: 10px 18px;
+    /* Espaciado interior para hacerlo más grande y fácil de pulsar */
+    border-radius: 20px;
+    /* Bordes muy redondeados tipo píldora */
+    cursor: pointer;
+    /* Cambia el cursor a una manita */
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    /* Mantiene la misma tipografía */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el color de fondo */
+}
+
+/* Efecto al pasar el ratón por el menú */
+.header-menu select:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lo hace un poco menos transparente (se aclara) */
+}
+
+/* Opciones dentro del menú desplegable */
+.header-menu select option {
+    background-color: #1e293b;
+    /* Fondo oscuro para que se lea bien sobre el blanco de las opciones */
+    color: #fff;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL (MAIN)
+========================================= */
+main {
+    flex: 1;
+    /* Hace que el main ocupe todo el espacio libre entre el header y el footer */
+    padding: 40px 20px;
+    /* Espacio interior arriba/abajo y a los lados */
+    max-width: 850px;
+    /* Anchura máxima para que no se estire demasiado en pantallas gigantes */
+    margin: 0 auto;
+    /* Centra el main en la pantalla (margen automático a los lados) */
+    width: 100%;
+    /* Ocupa el 100% del espacio disponible hasta llegar al max-width */
+}
+
+/* Cajas contenedoras (Cartelera y Reserva) */
+section {
+    background-color: #ffffff;
+    /* Fondo blanco puro */
+    border-radius: 16px;
+    /* Bordes muy redondeados */
+    padding: 35px;
+    /* Espaciado interior grande para que el contenido "respire" */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Sombra difuminada moderna y suave */
+    margin-bottom: 35px;
+    /* Separación con la sección que haya debajo */
+}
+
+/* Títulos de cada sección (h2) */
+h2 {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+    /* Separación con el contenido que va debajo */
+    color: #0f172a;
+    /* Azul muy oscuro, casi negro */
+    border-bottom: 3px solid #38bdf8;
+    /* Línea azul decorativa debajo del título */
+    display: inline-block;
+    /* Hace que la línea solo ocupe el ancho del texto, no toda la pantalla */
+    padding-bottom: 5px;
+    /* Distancia entre el texto y la línea decorativa */
+}
+
+/* =========================================
+   SECCIÓN: CARTELERA
+========================================= */
+/* Clase para centrar el contenido (imágenes) */
+.centrado {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Imagen principal (la más grande) */
+#principal {
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Sombra para darle profundidad */
+    width: 100%;
+    /* Que ocupe todo el ancho posible... */
+    max-width: 320px;
+    /* ...pero que nunca pase de 320px (Reducido para disimular mala calidad) */
+    transition: transform 0.3s ease;
+    /* Transición suave */
+}
+
+/* Efecto al pasar el ratón por la imagen principal */
+#principal:hover {
+    transform: scale(1.02);
+    /* Aumenta un 2% su tamaño */
+}
+
+/* Contenedor de las fotos pequeñas */
+.galeria {
+    display: flex;
+    /* Activa flexbox para poner las imágenes en fila */
+    justify-content: center;
+    /* Las centra en horizontal */
+    gap: 20px;
+    /* Añade una separación de 20px entre cada imagen */
+    margin-top: 25px;
+    /* Separación con la imagen principal de arriba */
+    flex-wrap: wrap;
+    /* Si no caben en una fila, pasan a la siguiente línea automáticamente */
+}
+
+/* Cada imagen pequeña de la galería */
+.galeria img {
+    cursor: pointer;
+    /* Cambia el cursor a una manita indicando que se puede hacer clic */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza el cambio de tamaño y de sombra */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    /* Ancho fijo reducido para mejorar nitidez */
+    height: 150px;
+    /* Altura fija para alineación perfecta */
+    object-fit: cover;
+    /* Recorta la imagen sin deformarla para que encaje en las medidas exactas */
+}
+
+/* Efecto al pasar el ratón por los pósters pequeños */
+.galeria img:hover {
+    transform: translateY(-8px);
+    /* Efecto levitación: mueve la imagen 8px hacia arriba */
+    box-shadow: 0 12px 20px rgba(56, 189, 248, 0.3);
+    /* Cambia la sombra a una azulada y más grande */
+}
+
+/* =========================================
+   SECCIÓN: FORMULARIOS DE RESERVA
+========================================= */
+/* Agrupaciones de los campos del formulario */
+.form-grupo {
+    margin-bottom: 25px;
+    /* Separación vertical entre cada pregunta del formulario */
+}
+
+/* Etiquetas de texto (Preguntas del formulario) */
+label {
+    font-weight: 600;
+    /* Texto en negrita suave */
+    color: #475569;
+    /* Gris oscuro */
+    display: block;
+    /* Obliga a que la etiqueta ocupe toda la línea (el input va debajo) */
+    margin-bottom: 10px;
+    /* Separación con la caja de respuesta */
+    font-size: 1.05rem;
+}
+
+/* Cajas de texto y menús desplegables */
+input,
+select {
+    width: 100%;
+    /* Ocupan todo el ancho posible */
+    max-width: 450px;
+    /* Pero con un tope para que no sean excesivamente largas en ordenador */
+    padding: 12px 15px;
+    /* Espacio interior para que no quede el texto pegado a los bordes */
+    background-color: #f8fafc;
+    /* Fondo casi blanco */
+    border: 1px solid #cbd5e1;
+    /* Borde gris claro */
+    color: #334155;
+    /* Color del texto que escribes */
+    border-radius: 8px;
+    /* Bordes ligeramente redondeados */
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al hacer clic para escribir en el formulario (Estado "Focus") */
+input:focus,
+select:focus {
+    border-color: #38bdf8;
+    /* El borde se pone azul vibrante */
+    outline: none;
+    /* Quita el contorno feo que ponen los navegadores por defecto */
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    /* Añade un anillo difuminado azul brillante */
+}
+
+/* =========================================
+   CAJA TOTAL A PAGAR
+========================================= */
+/* Contenedor del precio final */
+.caja-total {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    /* Fondo azul clarito degradado */
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #bae6fd;
+    /* Borde azul claro */
+    text-align: center;
+    font-size: 1.3rem;
+    /* Tamaño de fuente más grande que el texto normal */
+    color: #0f172a;
+    display: flex;
+    /* Flexbox para alinear el texto "Total a pagar" y el número en la misma línea */
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    gap: 15px;
+    /* Separación de 15px entre el texto y el número */
+}
+
+/* Número del precio específicamente */
+#precioTotal {
+    font-weight: 700;
+    /* Negrita muy gruesa */
+    font-size: 1.8rem;
+    /* Tamaño gigante */
+    color: #0284c7;
+    /* Azul fuerte para destacar el precio */
+}
+
+/* =========================================
+   PIE DE PÁGINA (FOOTER)
+========================================= */
+footer {
+    background-color: #0f172a;
+    /* Fondo muy oscuro, igual que parte del header */
+    color: #94a3b8;
+    /* Texto gris */
+    text-align: center;
+    /* Centra el texto en medio de la pantalla */
+    padding: 20px 0;
+    /* Relleno superior e inferior */
+    margin-top: auto;
+    /* Truco mágico: empuja el footer siempre al final de la página si sobra espacio en el main */
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE (MEDIA QUERIES PARA MÓVIL)
+========================================= */
+/* Todo lo que hay aquí dentro SOLO se aplica si la pantalla mide 768px de ancho o menos (Móviles y Tablets pequeñas) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        /* Cambia a Flexbox vertical: pone el logo, título y menú uno debajo de otro */
+        padding: 20px;
+        gap: 15px;
+        /* Separación entre los elementos apilados */
+    }
+
+    .logo,
+    .header-menu,
+    .header-titulo {
+        width: 100%;
+        /* Todos ocupan todo el ancho del móvil */
+        text-align: center;
+        /* Y todo el contenido dentro se centra */
+    }
+
+    .header-titulo h1 {
+        font-size: 1.6rem;
+        /* Título un poco más pequeño para que no se corte en la pantalla del móvil */
+    }
+
+    section {
+        padding: 25px 20px;
+        /* Reducimos los márgenes interiores grandes para aprovechar la pantalla pequeña */
+    }
+
+    .galeria img {
+        width: 80px;
+        /* Imágenes de la galería aún más pequeñas en móvil */
+        height: 120px;
+    }
+
+    .padding-button {
+        margin-top:33px;
+        } 

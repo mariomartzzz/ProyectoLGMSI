@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquilla de entradas digital</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://res.cloudinary.com/deunyl3k1/image/upload/s--m6Z3AByL--/c_pad,h_800,w_800/v1/gpla/mall_common/0001/68/15665b2e3eca464742a49b1cd2945d8aba44c51a.png" alt="Logo Odeon"
+                width="100">
+        </div>
+
+        <div class="header-titulo">
+            <h1>Odeon Multicines</h1>
+            <p>Venta de entradas</p>
+        </div>
+
+        <div class="header-menu">
+            <select id="menuNavegacion" onchange="location = this.value;" aria-label="Menú de navegación"
+                title="Menú de navegación">
+                <option value="#">Menú</option>
+                <option value="#cartelera">Cartelera</option>
+                <option value="#reserva">Reservas</option>
+                <option value="#contacto">Contacto</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <div class="form-container">
+                     <h2>Registro</h2>
+                <form action="#" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required><br></br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+        
+        <div style="padding-top:10px;">
+            <button type="submit">Enviar</button>
+            <button type="reset">Restablecer</button>
+        </div>
+    </form>
+        </section>
+
+        <section class="seccion-cartelera">
+            <h2>Cartelera</h2>
+            <div class="centrado">
+                <img id="principal" src="https://es.web.img3.acsta.net/medias/nmedia/18/83/53/62/19695928.jpg" alt="F&F"
+                    width="150">
+            </div>
+            <div class="centrado galeria">
+                <img id="Foto1"
+                    src="https://thfvnext.bing.com/th/id/OIP.ZfHO8gEK5fIQrIBRBIemigHaK-?w=194&h=288&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3"
+                    alt="Avatar" width="100">
+                <img id="Foto2"
+                    src="https://thfvnext.bing.com/th/id/OIP.9kHjYBavvuQxkHvsLmk1DAHaLP?w=194&h=295&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3"
+                    alt="Oppenheimer" width="100">
+                <img id="Foto3"
+                    src="https://thfvnext.bing.com/th/id/OIP.UO_sqbYuVxYyXcZIMOI9zwHaLA?w=194&h=288&c=7&r=0&o=7&cb=thfvnext&pid=1.7&rm=3"
+                    alt="Mario" width="100">
+            </div>
+        </section>
+
+        <section>
+            <h2>Reserva tus entradas</h2>
+            <div class="form-grupo">
+                <label for="pelicula">Selecciona la película:</label><br>
+                <select id="pelicula">
+                    <option value="8">Fast And Furious 5 (8€)</option>
+                    <option value="10">Avatar: El sentido del agua (10€)</option>
+                    <option value="7">Super Mario Bros: La película (7€)</option>
+                    <option value="9">Oppenheimer (9€)</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label for="nEntradas">Número de entradas:</label><br>
+                <input id="nEntradas" type="number" value="1" min="1">
+            </div>
+
+            <div class="caja-total">
+                Total a pagar: <span id="precioTotal">8</span>€
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Odeon Multicines - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="js/js.js"></script>
+</body>
+
+</html>

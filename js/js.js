@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             // 3. Si no ha habido ningún error, hacemos las matemáticas
-            // Obtenemos el precio de la película (que guardaste en el atributo "value" de cada <option> en el HTML)
+            // Obtenemos el precio de la película (guardada en el atributo "value" de cada <option> en el HTML)
             const precio = parseFloat(selectPelicula.value);
 
             // Multiplicamos el precio por el número de entradas y se lo ponemos al texto del "Total a pagar"
